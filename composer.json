@@ -3,8 +3,8 @@
     "description": "Debug bar for Zend Framework 1",
     "license": "BSD-2-Clause",
     "autoload": {
-        "psr-0": {
-            "ZFDebug": "library/"
-        }
+        "classmap": [
+            "library/"
+        ]
     }
 }
