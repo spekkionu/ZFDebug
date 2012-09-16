@@ -13,17 +13,17 @@
 /**
  * @see Zend_Controller_Exception
  */
-require_once 'Zend/Controller/Exception.php';
+// require_once 'Zend/Controller/Exception.php';
 
 /**
  * @see Zend_Version
  */
-require_once 'Zend/Version.php';
+// require_once 'Zend/Version.php';
 
 /**
  * @see ZFDebug_Controller_Plugin_Debug_Plugin_Text
  */
-require_once 'ZFDebug/Controller/Plugin/Debug/Plugin/Text.php';
+// require_once 'ZFDebug/Controller/Plugin/Debug/Plugin/Text.php';
 
 /**
  * @category   ZFDebug
@@ -323,7 +323,7 @@ class ZFDebug_Controller_Plugin_Debug extends Zend_Controller_Plugin_Abstract
                 $pluginClass = $plugin;
             }
 
-            require_once str_replace('_', DIRECTORY_SEPARATOR, $pluginClass) . '.php';
+            // require_once str_replace('_', DIRECTORY_SEPARATOR, $pluginClass) . '.php';
             $object = new $pluginClass($options);
             $this->registerPlugin($object);
         }
