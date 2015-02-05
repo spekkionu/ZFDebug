@@ -35,7 +35,7 @@ class ZFDebug_Controller_Plugin_Debug_Plugin_Text implements ZFDebug_Controller_
      * @var string
      */
     protected $_identifier = 'text';
-    
+
     /**
      * Contains plugin icon data
      *
@@ -47,7 +47,7 @@ class ZFDebug_Controller_Plugin_Debug_Plugin_Text implements ZFDebug_Controller_
      * Create ZFDebug_Controller_Plugin_Debug_Plugin_Text
      *
      * @param string $tab
-     * @paran string $panel
+     * @param string $panel
      * @return void
      */
     public function __construct(array $options = array())
@@ -69,7 +69,7 @@ class ZFDebug_Controller_Plugin_Debug_Plugin_Text implements ZFDebug_Controller_
     {
         return $this->_identifier;
     }
-    
+
     /**
      * Sets identifier for this plugin
      *
@@ -81,7 +81,7 @@ class ZFDebug_Controller_Plugin_Debug_Plugin_Text implements ZFDebug_Controller_
         $this->_identifier = $name;
         return $this;
     }
-    
+
     /**
      * Returns the base64 encoded icon
      *

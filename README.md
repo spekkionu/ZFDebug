@@ -7,7 +7,7 @@ Time spent, memory usage and number of database queries are presented at a glanc
 
 The available plugins at this point are:
 
-  * Cache: Information on Zend_Cache and APC.
+  * Cache: Information on Zend_Cache, APC and Zend OPcache (for PHP 5.5).
   * Database: Full listing of SQL queries from Zend_Db and the time for each.
   * Exception: Error handling of errors and exceptions.
   * File: Number and size of files included with complete list.
@@ -15,7 +15,7 @@ The available plugins at this point are:
 for custom memory measurements.
   * Log: Timing information of current request, time spent in action controller and custom timers. Also average, min and max time for requests.
   * Variables: View variables, request info and contents of `$_COOKIE`, `$_POST` and `$_SESSION`
-  
+
 Installation & Usage
 ------------
 To install, place the folder 'ZFDebug' in your library path, next to the Zend
@@ -27,10 +27,10 @@ folder. Then add the following method to your bootstrap class (in ZF1.8+):
 	    $autoloader->registerNamespace('ZFDebug');
 
 	    $options = array(
-	        'plugins' => array('Variables', 
-	                           'Database' => array('adapter' => $db), 
+	        'plugins' => array('Variables',
+	                           'Database' => array('adapter' => $db),
 	                           'File' => array('basePath' => '/path/to/project'),
-	                           'Cache' => array('backend' => $cache->getBackend()), 
+	                           'Cache' => array('backend' => $cache->getBackend()),
 	                           'Exception')
 	    );
 	    $debug = new ZFDebug_Controller_Plugin_Debug($options);
@@ -39,5 +39,20 @@ folder. Then add the following method to your bootstrap class (in ZF1.8+):
 	    $frontController = $this->getResource('frontController');
 	    $frontController->registerPlugin($debug);
 	}
+
+Using Composer
+--------------
+You may now install ZFDebug using the dependency management tool Composer.
+
+To use ZFDebug with Composer, add the following to the require list in your
+project's composer.json file:
+
+	"require": {
+	    "jokkedk/zfdebug": "1.6.2"
+	},
+
+Run the install command to resolve and download the dependencies:
+
+	php composer.phar install
 
 Further documentation will follow as the github move progresses.
